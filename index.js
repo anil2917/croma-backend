@@ -11,10 +11,6 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.use(express.json())
 const mongoose = require('mongoose');
-
-
-
-
 main().catch(err => console.log(err));
 
 async function main() {
@@ -48,28 +44,26 @@ app.post("/creatuser", async (req, res) => {
       mobile: req.body.mobile,
       email: req.body.email,
       password: req.body.password,
-      number:req.body.number,
-      firstname:req.body.firstname,
-      lastname:req.body.lastname,
-      middlename:req.body.middlename,
-      gender:req.body.gender,
-      dob:req.body.dob,
-      doa:req.body.doa,
-      
+      number: req.body.number,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      middlename: req.body.middlename,
+      gender: req.body.gender,
+      dob: req.body.dob,
+      doa: req.body.doa,
+
     });
     const saveuser = await newuser.save()
     res.json({ status: false })
-  console.log("eeee",saveuser)
+    console.log("eeee", saveuser)
   }
 })
 
 app.post("/Profile", async (req, res) => {
-
   //  const findAAAA2 = await user.findOne({ mobile: req.body.number })
   const updateuser = await user.findOneAndUpdate({ mobile: req.body.number }, req.body,
     { new: true })
- res.json({status:true,data:updateuser})
-
+  res.json({ status: true, data: updateuser })
 })
 
 app.post("/mobile", async (req, res) => {
@@ -84,6 +78,13 @@ app.post("/mobile", async (req, res) => {
   } catch (error) {
     console.log(error)
   }
+})
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "Api run",
+    status: true,
+  })
 })
 
 
