@@ -4,7 +4,7 @@ const cors = require("cors")
 const { json } = require('express')
 
 const corsOptions = {
-  origin: '*',
+  origin: 'https://croma-ydnf.vercel.app',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
