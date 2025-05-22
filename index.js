@@ -71,6 +71,9 @@ app.post("/Profile", async (req, res) => {
 
 app.post("/mobile", async (req, res) => {
   res.json({ message: "helooo mobile api", bodydata: req.body.contact })
+
+})
+app.post("/allUser", async (req, res) => {
   let contact = req.body.contact
   try {
     const finduser = await user.findOne({ mobile: contact })
@@ -82,9 +85,6 @@ app.post("/mobile", async (req, res) => {
   } catch (error) {
     res.json(error)
   }
-})
-app.get("/allUser", async (req, res) => {
-
 })
 
 app.get("/", (req, res) => {
