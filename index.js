@@ -70,7 +70,7 @@ app.post("/Profile", async (req, res) => {
     { new: true }
   );
   
-  res.json({ status: true, data: updateuser ,message:"yyyy" });
+  res.json({ status: true, data: req.body ,message:"yyyy" });
 });
 
 app.post("/allUser", async (req, res) => {
