@@ -4,7 +4,7 @@ const cors = require("cors")
 const { json } = require('express')
 
 const corsOptions = {
-  origin: ["https://croma-frontend.vercel.app/","http://localhost:5173"],
+  origin: ["https://croma-frontend.vercel.app/", "http://localhost:5173"],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
@@ -16,7 +16,7 @@ main().catch(err => console.log(err));
 
 // y5RyhCvsgZRG7g8S
 async function main() {
-  
+
   await mongoose.connect('mongodb+srv://vsamrat274:y5RyhCvsgZRG7g8S@cluster0.hhezy3r.mongodb.net/cROMA?retryWrites=true&w=majority&appName=Cluster0');
   console.log("DATABASE CONNECT")
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
@@ -69,9 +69,9 @@ app.post("/Profile", async (req, res) => {
   res.json({ status: true, data: updateuser })
 })
 
-app.get("/mobile", async (req, res) => {
+app.post("/mobile", async (req, res) => {
   console.log(req.body)
-  res.json({message:"helooo mobile api"})
+  res.json({ message: "helooo mobile api", bodydata: req.body })
   // try {
   //   const finduser = await user.findOne({ mobile: req.body.contact })
   //   if (finduser) {
