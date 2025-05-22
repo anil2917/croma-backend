@@ -72,16 +72,16 @@ app.post("/Profile", async (req, res) => {
 app.post("/mobile", async (req, res) => {
   console.log(req.body)
   res.json({ message: "helooo mobile api", bodydata: req.body })
-  // try {
-  //   const finduser = await user.findOne({ mobile: req.body.contact })
-  //   if (finduser) {
-  //     res.json({ data: finduser, status: true })
-  //   } else {
-  //     res.json({ data: finduser, status: false })
-  //   }
-  // } catch (error) {
-  //   res.json(error)
-  // }
+  try {
+    const finduser = await user.findOne({ mobile: req.body.contact })
+    if (finduser) {
+      res.json({ data: finduser, status: true })
+    } else {
+      res.json({ data: finduser, status: false })
+    }
+  } catch (error) {
+    res.json(error)
+  }
 })
 
 app.get("/", (req, res) => {
