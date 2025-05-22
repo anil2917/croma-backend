@@ -71,7 +71,7 @@ app.post("/Profile", async (req, res) => {
 
 app.post("/mobile", async (req, res) => {
   console.log(req.body)
-  res.json({ message: "helooo mobile api", bodydata: req.body })
+  res.json({ message: "helooo mobile api", bodydata: req.body.contact })
   try {
     const finduser = await user.find({ mobile: req.body.contact })
     res.json(finduser)
