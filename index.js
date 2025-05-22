@@ -4,7 +4,7 @@ const cors = require("cors")
 const { json } = require('express')
 
 const corsOptions = {
-  origin: ["https://croma-frontend.vercel.app/", "http://localhost:5173"],
+  origin: ["https://croma-frontend.vercel.app", "http://localhost:5173"],
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
