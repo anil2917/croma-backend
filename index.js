@@ -63,6 +63,7 @@ app.post("/creatuser", async (req, res) => {
 });
 
 app.post("/Profile", async (req, res) => {
+  console.log(req.body)
   //  const findAAAA2 = await user.findOne({ mobile: req.body.number })
   const updateuser = await user.findOneAndUpdate(
     { mobile: req.body.number },
@@ -70,7 +71,7 @@ app.post("/Profile", async (req, res) => {
     { new: true }
   );
   
-  res.json({ status: true, data: req.body ,message:"yyyy" });
+  res.json({ status: true, data: updateuser ,message:"yyyy" });
 });
 
 app.post("/allUser", async (req, res) => {
