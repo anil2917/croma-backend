@@ -85,7 +85,7 @@ app.post("/mobile", async (req, res) => {
   }
 })
 app.get("/allUser", async (req, res) => {
-  const allData = await user.find({})
+  const allData = await user.findOne({ mobile: "8769970689" })
   res.json({ data: allData, status: true })
 })
 
