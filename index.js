@@ -69,9 +69,9 @@ app.post("/Profile", async (req, res) => {
   res.json({ status: true, data: updateuser })
 })
 
-app.post("/mobile", async (req, res) => {
+app.get("/mobile", async (req, res) => {
   console.log(req.body)
-  res.json({data:req.body})
+  res.json({message:"helooo mobile api"})
   // try {
   //   const finduser = await user.findOne({ mobile: req.body.contact })
   //   if (finduser) {
