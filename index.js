@@ -57,7 +57,7 @@ app.post("/creatuser", async (req, res) => {
 
     });
     const saveuser = await newuser.save()
-    res.json({ status: true, message: saveuser })
+    res.json({data : saveuser ,message:"newemail" })
   }
 })
 
