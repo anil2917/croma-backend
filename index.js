@@ -57,8 +57,7 @@ app.post("/creatuser", async (req, res) => {
 
     });
     const saveuser = await newuser.save()
-    res.json({ status: false })
-    console.log("eeee", saveuser)
+    res.json({ status: true, message: saveuser })
   }
 })
 
@@ -69,10 +68,6 @@ app.post("/Profile", async (req, res) => {
   res.json({ status: true, data: updateuser })
 })
 
-app.post("/mobile", async (req, res) => {
-  res.json({ message: "helooo mobile api", bodydata: req.body.contact })
-
-})
 app.post("/allUser", async (req, res) => {
   let contact = req.body.contact
   try {
@@ -86,6 +81,7 @@ app.post("/allUser", async (req, res) => {
     res.json(error)
   }
 })
+
 
 app.get("/", (req, res) => {
   res.json({
